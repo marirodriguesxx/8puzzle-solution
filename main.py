@@ -25,7 +25,7 @@ def main():
     print("Tabuleiro final:")
     print(qc.toString())
     print("Movimentos")
-    #   for pos in result:
-        #print("Linha: " + str(pos.getLinha()) + " - Coluna: " + str(pos.getColuna()))
+    for pos in result:
+        print("Linha: " + str(pos.getLinha()) + " - Coluna: " + str(pos.getColuna()))
 
 main()
