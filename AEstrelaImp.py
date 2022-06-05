@@ -31,7 +31,7 @@ class AEstrelaImp(AEstrela):
         
         g = 1 # custo da distancia entre os nós - inicialmente 1 até o próximo nó (altura da árvore)
         f = qc.getValor() + g # custo total de um nó até ao outro
-        
+
         configs.append([f, qc.getTab()]) 
         configsVisitadas.append(qc.hashCode()) #marcamos a config inicial do tabuleiro como visitada
 
