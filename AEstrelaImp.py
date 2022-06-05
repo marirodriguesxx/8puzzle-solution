@@ -2,7 +2,6 @@ from Posicao import Posicao
 from AEstrela import AEstrela
 from QuebraCabeca import QuebraCabeca
 from QuebraCabecaImp import QuebraCabecaImp
-import numpy as np
 
 def solucionavel(puzzle):
 
@@ -41,14 +40,14 @@ class AEstrelaImp(AEstrela):
                 #calcula o caminho
                 if qc.hashCode() not in configsVisitadas: #se ainda nao verificamos essa config de tabuleiro
                     configsVisitadas.append(qc.hashCode()) #marcamos como verificada, adicionando ao vetor de visitados
-                    f = qc.getValor() + (g +1) #mais um nivel na arvore 
+                    f = qc.getValor() + (g +1) #mais um nivel na arvore de solucoes
                     configs.append([f, g , tableAux])
                 #retorna pra posicao
                 qc.move(destino.getLinha(), destino.getColuna(), vazio.getLinha(), vazio.getColuna())
 
             configs.pop(0)
             configs.sort() # ordena crescentemente de acordo com o valor do custo total do caminho
-            qc.setTab(configs[0][2])
+            qc.setTab(configs[0][2]) # escolhemos sempre o no com menor custo e exploramos ele
             posVazia.append(qc.getPosVazio())
 
         return posVazia   
